@@ -2,7 +2,7 @@ from urllib import request
 from django.db import models
 from ishop.decorators import i18n
 from ishop.helpers import UploadTo
-
+from account.models import User
 # Create your models here.
 
 @i18n
@@ -22,3 +22,5 @@ class Product(models.Model):
     available = models.IntegerField(default=0)
     added_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    like = models.SmallIntegerField(default=0)
+    like_users = models.ManyToManyField(User)

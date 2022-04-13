@@ -18,13 +18,15 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.documentation import include_docs_urls
-
+from main.views import MainIndex
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("docs/",include_docs_urls(title="DOC",permission_classes = ())),
+    path('',MainIndex.as_view(),name='index'),
     path('api/',include([
         path('',include('main.urls')),
         path('account/',include('account.urls')),
-        path('cart/',include('cart.urls'))
+        path('cart/',include('cart.urls')),
+        path('common/',include('common.urls'))
     ]))
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

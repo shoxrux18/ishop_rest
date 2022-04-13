@@ -38,6 +38,7 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS',cast=list)
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +51,9 @@ INSTALLED_APPS = [
     'account',
     'main',
     'cart',
+    'django_filters'
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -162,7 +166,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-    'rest_framework.permissions.IsAuthenticated',
+    'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 12
