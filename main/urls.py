@@ -1,4 +1,3 @@
-from xml.etree.ElementInclude import include
 from django.urls import path
 from .views import CategoryView,CategoryEditView,ProductsView,ProductCreateView,ProductEditView
 from .views import CategoryFilterView,ProductFilterView,ProductFilterIdView,ProductLikeView

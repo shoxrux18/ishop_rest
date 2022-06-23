@@ -1,11 +1,8 @@
-
-from rest_framework.serializers import ValidationError
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView,CreateAPIView,RetrieveUpdateDestroyAPIView
 from django.db import transaction
 from cart.models import DeliveryAddress,Order
 from cart.serializers import DeliveryAddressListSerializer,DeliveryAddressSerializer
-from cart.serializers import OrderSerializer,OrderProductSerializer,OrderListSerializer
+from cart.serializers import OrderSerializer,OrderListSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 

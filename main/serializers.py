@@ -1,8 +1,8 @@
 from asyncore import read
 from rest_framework import serializers
-
 from main.models import Category,Product
-
+ 
+ 
 class CategoryListSerializer(serializers.ModelSerializer):
     name = serializers.CharField(read_only = True)
     class Meta:

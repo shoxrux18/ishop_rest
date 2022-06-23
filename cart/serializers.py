@@ -2,9 +2,7 @@ from asyncore import write
 from dataclasses import field
 from rest_framework.serializers import ValidationError
 from rest_framework import serializers
-
 from common.serializer import CountrySerializer,RegionSerializer,DistrictSerializer
-from main.serializers import ProductListSerializer, ProductSerializer
 from .models import DeliveryAddress,Order,OrderProduct
 from main.models import Product
 

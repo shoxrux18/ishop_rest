@@ -1,9 +1,8 @@
-from urllib import request
 from django.db import models
 from ishop.decorators import i18n
 from ishop.helpers import UploadTo
 from account.models import User
-# Create your models here.
+
 
 @i18n
 class Category(models.Model):
