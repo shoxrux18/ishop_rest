@@ -1,7 +1,7 @@
 
 from unicodedata import category
+from webbrowser import get
 from rest_framework.response import Response
-from django.http import HttpResponse, JsonResponse, response
 from main.models import Category,Product
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import filters
@@ -13,7 +13,8 @@ from account.models import User
 from django.db import transaction
 from rest_framework.permissions import AllowAny
 from django.shortcuts import render
-
+from rest_framework import settings
+from django.contrib.auth import get_user_model
 
 class MainIndex(View):
     def get(self,request):
@@ -58,7 +59,7 @@ class CategoryEditView(APIView):
         })
 
 
-    def delete(self, request):
+    def delete(self, request,pk):
         pass
 
 
